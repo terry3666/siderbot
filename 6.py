@@ -278,7 +278,7 @@ while True:
                                     num=(num+1)
                                 msgs+="\n═════════List Blocked═════════\n\nTotal Blocked : %i" % len(kontak)
                                 client.sendMessage(msg.to, msgs)
-                            elif text.lower() == 'mention':
+                            elif text.lower() == 'tagall':
                                 group = client.getGroup(msg.to)
                                 nama = [contact.mid for contact in group.members]
                                 nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)
@@ -331,7 +331,7 @@ while True:
                                         nm5 += [nama[m]]
                                     mention(msg.to, nm5)             
                                 client.sendMessage(receiver, "Members :"+str(jml))
-                            elif text.lower() == 'lurking on':
+                            elif text.lower() == 'cctv on':
                                 tz = pytz.timezone("Asia/Jakarta")
                                 timeNow = datetime.now(tz=tz)
                                 day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday"]
@@ -373,7 +373,7 @@ while True:
                                         json.dump(read, fp, sort_keys=True, indent=4)
                                         client.sendMessage(msg.to, "Set reading point:\n" + readTime)
                                         
-                            elif text.lower() == 'lurking off':
+                            elif text.lower() == 'cctv off':
                                 tz = pytz.timezone("Asia/Jakarta")
                                 timeNow = datetime.now(tz=tz)
                                 day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday"]
@@ -397,7 +397,7 @@ while True:
                                           pass
                                     client.sendMessage(msg.to, "Delete reading point:\n" + readTime)
                 
-                            elif text.lower() == 'lurking reset':
+                            elif text.lower() == 'cctv reset':
                                 tz = pytz.timezone("Asia/Jakarta")
                                 timeNow = datetime.now(tz=tz)
                                 day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday"]
@@ -422,7 +422,7 @@ while True:
                                 else:
                                     client.sendMessage(msg.to, "Lurking belum diaktifkan ngapain di reset?")
                                     
-                            elif text.lower() == 'lurking':
+                            elif text.lower() == 'intip':
                                 tz = pytz.timezone("Asia/Jakarta")
                                 timeNow = datetime.now(tz=tz)
                                 day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday"]
